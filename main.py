@@ -4,10 +4,6 @@ from bardapi import Bard
 from transformers import pipeline, AutoTokenizer
 import streamlit as st
 
-headers = {
-    "authorization": st.secrets["BARD_API_KEY"],
-    "content-type": "application/json"
-}
 
 load_dotenv(find_dotenv())
 HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
@@ -26,13 +22,18 @@ def image2text(url):
 
 def generate_story(story):
     load_dotenv()
-    token = os.getenv("BARD_API_KEY")
+    # token = os.getenv("BARD_API_KEY")
 
-    bard = Bard(token=token)
+    # bard = Bard(token=token)
     # text = image2text(story)
 
+    headers = {
+        "authorization": st.secrets["BARD_API_KEY"],
+        "content-type": "application/json"
+    }
+
     prompt = f"In not more than 30 words Generate a short story based on this caption: {story}"
-    result = bard.get_answer(prompt)['content']
+    result = bard.get_answer(prompt, headers=headers)['content']
     # print(result)
     return result
 
