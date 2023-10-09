@@ -4,6 +4,10 @@ from bardapi import Bard
 from transformers import pipeline, AutoTokenizer
 import streamlit as st
 
+headers = {
+    "authorization": st.secrets["BARD_API_KEY"],
+    "content-type": "application/json"
+}
 
 load_dotenv(find_dotenv())
 HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")

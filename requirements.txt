@@ -1,0 +1,5 @@
+bardapi
+langchain
+python-dotenv
+streamlit
+transformers
