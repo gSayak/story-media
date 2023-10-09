@@ -31,7 +31,7 @@ def generate_story(story):
         "authorization": st.secrets["BARD_API_KEY"],
         "content-type": "application/json"
     }
-
+    bard = Bard(headers=headers)
     prompt = f"In not more than 30 words Generate a short story based on this caption: {story}"
     result = bard.get_answer(prompt, headers=headers)['content']
     # print(result)
