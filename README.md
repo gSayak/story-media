@@ -5,6 +5,7 @@
 
 Upload an image and get a curated story based on that image
 
+![StoryMedia Preview](https://github.com/gSayak/image-storyteller/blob/main/assets/storyMedia.gif)
 
 ## TechStack Used
 1. Plam2
