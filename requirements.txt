@@ -3,3 +3,5 @@ langchain
 python-dotenv
 streamlit
 transformers
+tensorflow
+pytorch
